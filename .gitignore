@@ -1,6 +1,6 @@
 ######################################################################
 # Build Tools
-
+.mvn/
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -47,3 +47,8 @@ nbdist/
 !*/build/*.xml
 
 .flattened-pom.xml
+
+# git
+.gitbub/
+.gitee/
+.git/

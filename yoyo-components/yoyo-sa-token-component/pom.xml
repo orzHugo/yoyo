@@ -3,21 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>cn.tycoon</groupId>
-        <artifactId>yoyo-parent</artifactId>
+        <artifactId>yoyo-components</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>yoyo-parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>yoyo</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>yoyo-sa-token-component</artifactId>
+    <description>认证鉴权模块</description>
 
-    <modules>
-        <module>yoyo-parent</module>
-        <module>start</module>
-        <module>yoyo-components</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-reactor-spring-boot3-starter</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

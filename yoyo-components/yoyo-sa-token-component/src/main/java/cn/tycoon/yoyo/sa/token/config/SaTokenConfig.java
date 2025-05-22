@@ -1,8 +1,10 @@
 package cn.tycoon.yoyo.sa.token.config;
 
 import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
+import cn.dev33.satoken.stp.StpInterface;
 import cn.dev33.satoken.stp.StpLogic;
 import cn.tycoon.yoyo.sa.token.loginType.StpCustomerUtil;
+import cn.tycoon.yoyo.sa.token.service.StpInterfaceImpl;
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -30,5 +32,13 @@ public class SaTokenConfig {
     @PostConstruct
     public void SetCustomerStpLogic() {
         StpCustomerUtil.setStpLogic(new StpLogicJwtForSimple(StpCustomerUtil.TYPE));
+    }
+
+    /**
+     * 权限接口实现(使用bean注入方便用户替换)
+     */
+    @Bean
+    public StpInterface getStpInterface() {
+        return new StpInterfaceImpl();
     }
 }

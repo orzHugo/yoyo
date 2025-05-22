@@ -2,6 +2,8 @@ package cn.tycoon.yoyo.sa.token.config;
 
 import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
 import cn.dev33.satoken.stp.StpLogic;
+import cn.tycoon.yoyo.sa.token.loginType.StpCustomerUtil;
+import jakarta.annotation.PostConstruct;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
@@ -20,5 +22,13 @@ public class SaTokenConfig {
     @Bean
     public StpLogic getStpLogicJwt() {
         return new StpLogicJwtForSimple();
+    }
+
+    /**
+     * 为 StpCustomerUtil 注入 StpLogicJwt 实现
+     */
+    @PostConstruct
+    public void SetCustomerStpLogic() {
+        StpCustomerUtil.setStpLogic(new StpLogicJwtForSimple(StpCustomerUtil.TYPE));
     }
 }

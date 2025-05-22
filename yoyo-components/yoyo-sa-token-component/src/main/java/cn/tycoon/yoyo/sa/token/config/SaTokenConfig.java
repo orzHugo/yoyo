@@ -1,6 +1,7 @@
 package cn.tycoon.yoyo.sa.token.config;
 
 import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
+import cn.dev33.satoken.reactor.filter.SaReactorFilter;
 import cn.dev33.satoken.stp.StpInterface;
 import cn.dev33.satoken.stp.StpLogic;
 import cn.tycoon.yoyo.sa.token.loginType.StpCustomerUtil;
@@ -17,6 +18,14 @@ import org.springframework.context.annotation.Bean;
  */
 @AutoConfiguration
 public class SaTokenConfig {
+
+    /**
+     * 注册 Sa-Token 全局过滤器 以便后续进行动态鉴权
+     */
+    @Bean
+    public SaReactorFilter getSaReactorFilter() {
+        return new SaReactorFilter();
+    }
 
     /**
      * 主用户体系JWT 配置 整合 jwt (Simple 简单模式)

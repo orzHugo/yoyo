@@ -1,4 +1,4 @@
-package cn.tycoon.yoyo.sa.token.loginType;
+package cn.tycoon.yoyo.sa.token.userType;
 
 import cn.dev33.satoken.SaManager;
 import cn.dev33.satoken.fun.SaFunction;

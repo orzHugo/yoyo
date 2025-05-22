@@ -4,7 +4,7 @@ import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
 import cn.dev33.satoken.reactor.filter.SaReactorFilter;
 import cn.dev33.satoken.stp.StpInterface;
 import cn.dev33.satoken.stp.StpLogic;
-import cn.tycoon.yoyo.sa.token.loginType.StpCustomerUtil;
+import cn.tycoon.yoyo.sa.token.userType.StpCustomerUtil;
 import cn.tycoon.yoyo.sa.token.service.StpInterfaceImpl;
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
